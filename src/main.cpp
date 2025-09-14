@@ -34,9 +34,6 @@ void loop() {
     
     p = error * kp;
     i += (error * ki) * delta;
-    if (i > 255) i = 255;
-    if (i < -255) i = -255;
-    //d = (last_temperature - temperature) * kd * delta;
     d = ((error - last_error) / delta) * kd;
 
     pid = p + i + d;
